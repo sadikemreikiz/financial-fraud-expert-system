@@ -1,0 +1,15 @@
+torch
+torchvision
+torchaudio
+transformers
+scikit-learn
+pandas
+numpy
+matplotlib
+opencv-python
+pillow
+pytesseract
+python-dotenv
+tqdm
+shap
+lime
