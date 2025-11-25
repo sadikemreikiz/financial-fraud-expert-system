@@ -10,17 +10,23 @@ RAW_DIR = DATA_DIR / "raw"
 INTERIM_DIR = DATA_DIR / "interim"
 PROCESSED_DIR = DATA_DIR / "processed"
 
+# Model directories
+MODEL_DIR = BASE_DIR / "models"
+MODEL_TEXT_DIR = MODEL_DIR / "text"
+MODEL_IMAGE_DIR = MODEL_DIR / "image"
+MODEL_FUSION_DIR = MODEL_DIR / "fusion"
+
+# Create directories if not exist
+for d in [DATA_DIR, RAW_DIR, INTERIM_DIR, PROCESSED_DIR,
+          MODEL_DIR, MODEL_TEXT_DIR, MODEL_IMAGE_DIR, MODEL_FUSION_DIR]:
+    os.makedirs(d, exist_ok=True)
+
 # OCR configuration settings
 OCR_CONFIG = {
-    "lang": "eng",   # later we can change to 'eng+deu' if needed
-    "oem": 3,        # OCR Engine Mode
-    "psm": 6,        # Page Segmentation Mode
+    "lang": "eng",
+    "oem": 3,   # OCR Engine Mode
+    "psm": 6,   # Page Segmentation Mode
 }
 
 # Output file for OCR results
 OCR_OUTPUT_JSONL = INTERIM_DIR / "ocr_results.jsonl"
-
-def ensure_directories():
-    """Create required directories if they do not exist."""
-    for d in [DATA_DIR, RAW_DIR, INTERIM_DIR, PROCESSED_DIR]:
-        os.makedirs(d, exist_ok=True)
