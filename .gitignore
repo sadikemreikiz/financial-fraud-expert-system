@@ -1,12 +1,11 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
-*.py[cod]
-*$py.class
+*.py[co]
+*.$py.class
 
 # Virtual environments
 .venv/
 venv/
-env/
 
 # MacOS
 .DS_Store
@@ -16,14 +15,21 @@ env/
 
 # Python packaging
 *.egg-info/
-.eggs/
 dist/
 build/
 
 # Jupyter notebooks
 .ipynb_checkpoints/
 
-# Data/model outputs
+# === DATASETS - DO NOT COMMIT ===
+data/raw/
+data/raw/**
 data/interim/
+data/interim/**
 data/processed/
+data/processed/**
+
+# === MODELS (DO NOT COMMIT) ===
 models/
+models/**
+
